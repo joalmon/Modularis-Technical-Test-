@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees | Modularis</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h1 class="page-title">Employees</h1>
+
+        <div class="card">
+            <div class="card-header">
+                <button id="btn-add" class="btn btn-primary">NEW EMPLOYEE</button>
+            </div>
+
+            <div class="table-container">
+                <table class="simple-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employee-list-body">
+                        <tr>
+                            <td colspan="5" class="text-center">Loading employees...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-employee" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">New Employee</h2>
+
+            <div id="form-error-banner" class="error-banner">
+                <strong>Validation Error:</strong><br>
+                All fields are required. Please ensure Employee No contains only numbers and SSN follows the XXX-XX-XXXX format.
+            </div>
+
+            <form id="employee-form" novalidate>
+                <input type="hidden" id="emp-id">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" id="emp-firstname" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" id="emp-lastname" required>
+                </div>
+                <div class="form-group">
+                    <label>Employee No</label>
+                    <input type="text" id="emp-no" pattern="^[0-9]+$" required>
+                </div>
+                <div class="form-group">
+                    <label>SSN</label>
+                    <input type="text" id="emp-ssn" required pattern="\d{3}-\d{2}-\d{4}" placeholder="XXX-XX-XXXX">
+                </div>
+                <div id="status-group" class="form-group">
+                    <label>Status</label>
+                    <select id="emp-status" class="form-control">
+                        <option value="0">Active</option>
+                        <option value="1">Inactive</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3 class="delete-title">Delete Record</h3>
+            <p>
+                Are you sure you want to delete <br>
+                <span id="delete-employee-name" class="highlight-name"></span>?
+            </p>
+            <div class="modal-footer-centered">
+                <button id="cancel-delete" class="btn btn-secondary">Cancel</button>
+                <button id="confirm-delete" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div id="error-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3 style="color: #d32f2f;">System Error</h3>
+            <p id="error-modal-message"></p>
+            <div class="modal-actions">
+                <button id="close-error-modal">Close</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./dist/app.js"></script>
+</body>
+</html>

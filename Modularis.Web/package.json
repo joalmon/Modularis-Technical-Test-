@@ -1,0 +1,14 @@
+{
+  "name": "modularis-employee-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tecnical test for Modularis - HR Managament Application",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "Tu Nombre",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
