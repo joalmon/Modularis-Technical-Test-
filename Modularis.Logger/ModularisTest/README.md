@@ -33,7 +33,7 @@ Follow these steps to set up and run the project on any development environment:
 ### 2. Initial Setup
 1. Clone or extract the project files into a local directory.
 2. Open the solution file (.sln) using Visual Studio.
-3. **Library Update**: The versions of MSTest.TestAdapter and MSTest.TestFramework were updated to a stable and recent version (2.2.x or higher) to ensure compatibility with modern test runners.
+3. **Library Update**: The versions of MSTest.TestAdapter and MSTest.TestFramework were updated to the latest stable and recent version to ensure compatibility with modern test runners.
 4. Build the solution
 
 ### 3. Running Unit Tests
