@@ -1,0 +1,15 @@
+# --- Ignorar carpetas de compilación de .NET ---
+[Bb]in/
+[Oo]bj/
+.vs/
+TestResults/
+
+# --- Ignorar carpetas de dependencias Web ---
+node_modules/
+dist/
+build/
+.env
+
+# --- Archivos de sistema ---
+.DS_Store
+Thumbs.db
